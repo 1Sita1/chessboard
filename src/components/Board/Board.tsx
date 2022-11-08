@@ -6,15 +6,17 @@ import React, {
 import Square from "../Square/Square"
 import "./Board.css"
 
-const Board: React.FC = () => {
+type BoardProps = {}
+
+const Board: React.FC<BoardProps> = () => {
     const [squares, setSquares] = useState<ReactElement[]>(
         []
     )
 
     useEffect(() => {
         const newSquares: ReactElement[] = []
-        const darkColor = "#3c3c3c"
-        const lightColor = "#358239"
+        const darkColor = "#000"
+        const lightColor = "#fff"
 
         for (let i = 0; i < 64; i++) {
             newSquares.push(
